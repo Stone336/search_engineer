@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results</title>
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+<!--    <h1>Search Results</h1>-->
+    <h1>Search Results for "{{ query }}"</h1>
+    <a href="/">Back to search</a>
+
+<!--    <h2>TF-IDF Results:</h2>-->
+<!--    <ul>-->
+<!--        {% for title, score in results_tfidf %}-->
+<!--            <li>{{ title }} (Similarity Score: {{ score }})</li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+
+<!--    <h2>Word2Vec Results:</h2>-->
+<!--    <ul>-->
+<!--        {% for title, score in results_w2v %}-->
+<!--            <li>{{ title }} (Similarity Score: {{ score }})</li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+
+<!--    <h2>Fuzzy Search Results:</h2>-->
+<!--    <ul>-->
+<!--        {% for title, score in results_fuzzy %}-->
+<!--            <li>{{ title }} (Similarity Score: {{ score }})</li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+
+  {% if message %}
+        <p>{{ message }}</p>
+    {% else %}
+        <h2>Combined Search Results:</h2>
+        <ul>
+            {% for title, score in results_combined %}
+                <li>{{ title }} (Similarity Score: {{ score }})</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+  </body>
+</html>
